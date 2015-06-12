@@ -17,7 +17,6 @@ define([
 				template : tplSidebar,
 				regions : {
 					list : '#sidebar-list',
-					footer : '#sidebar-footer',
 				}
 			});
 			// Instantiate

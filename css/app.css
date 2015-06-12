@@ -37,9 +37,15 @@ body {
 #main .row {
     margin-bottom: 20px;
 }
-
+#main-header {
+  margin-top: 10px;
+}
+#main-header .col-sm-6 {
+    padding-top: 10px;
+}
 
 /** SCROLL BAR **/
+/*
 .sidebar-nav .panel-body {
     margin-right: -11px;
 }
@@ -70,3 +76,4 @@ body {
     border: 3px solid #fff;
     border-radius: 5px;
 }
+*/

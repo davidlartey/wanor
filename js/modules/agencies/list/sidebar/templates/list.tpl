@@ -2,7 +2,7 @@
     <div class="panel-heading"> 
     	Contact an Agency
     </div>
-    <div class="panel-body" style="padding: 0; height: 100px; overflow: auto;">
+    <div class="panel-body" style="padding: 0;">
         <ul class="nav"> </ul>
     </div>
 </div>
