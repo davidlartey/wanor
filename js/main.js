@@ -3,6 +3,8 @@
  */
 
 require.config({
+	urlArgs: "bust=" + (new Date()).getTime(), // No caching of files (DEV)
+    waitSeconds: 0, // Wait for each module indefinitely
 	baseURL : 'js/',
 	paths : {
 		'jquery' : 'lib/jquery',
@@ -10,20 +12,28 @@ require.config({
 		'underscore' : 'lib/underscore',
 		'backbone' : 'lib/backbone',
 		'marionette' : 'lib/backbone.marionette',
+		'text' : 'lib/text',
+		'tpl' : 'lib/underscore-tpl',
 	},
-	shims : {
+	shim : {
 		'backbone' : {
 			deps : ['jquery', 'json2', 'underscore']
 		},
 		'marionette' : {
 			deps : ['backbone']
-		}
+		},
+		'tpl' : {
+			deps : ['text'],
+		},
 	}
+	
 });
 
+
 require(['app'], function( Wanor ) {
+	
 	// Start App
-	var Wanor = require('app'); // Get access to application from the global scope
+	// var WanorApp = require('app'); // Get access to application from the global scope
 	Wanor.start();
 
 });

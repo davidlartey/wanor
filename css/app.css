@@ -37,3 +37,31 @@ body {
 #main .row {
     margin-bottom: 20px;
 }
+
+
+/** SCROLL BAR **/
+.sidebar-nav .panel-body {
+    margin-right: -11px;
+    /*height: 500px;*/
+}
+.sidebar-nav .panel-body ul.nav {
+    border-right: 1px solid #ddd;
+}
+.sidebar-nav .panel-body::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+}
+.sidebar-nav .panel-body::-webkit-scrollbar-button {
+    display: none;
+}
+.sidebar-nav .panel-body::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.sidebar-nav .panel-body::-webkit-scrollbar-thumb {
+  min-height: 2rem;
+  background: #d2d2d2;
+  background-clip: padding-box;
+  border: 3px solid #fff;
+  border-radius: 5px;
+}

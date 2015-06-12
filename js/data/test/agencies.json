@@ -1,0 +1,32 @@
+[
+	{
+	                        "id" : 1,
+	                        "name": "ECG Distric Office, Ningo-Prampram Distric, Prampram.",
+	                        "institution": "ECG",
+	                        "phoneNumber": "555-0163",
+	                        "location" : {
+	                        	"lat" : "0.4567",
+	                        	"lon" : "0.2345",
+	                        }
+	},
+	{
+	                        "id" : 2,
+	                        "name": "CitiFM",
+	                        "institution": "Radio Station",
+	                        "phoneNumber": "555-0163",
+	                        "location" : {
+	                        	"lat" : "0.4567",
+	                        	"lon" : "0.2345",
+	                        }
+	},
+	{
+	                        "id" : 1,
+	                        "name": "NADMO office, Assylum Down, Accra",
+	                        "institution": "NADMO",
+	                        "phoneNumber": "555-0163",
+	                        "location" : {
+	                        	"lat" : "0.4567",
+	                        	"lon" : "0.2345",
+	                        }
+	}
+]
