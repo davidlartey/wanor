@@ -37,3 +37,36 @@ body {
 #main .row {
     margin-bottom: 20px;
 }
+
+
+/** SCROLL BAR **/
+.sidebar-nav .panel-body {
+    margin-right: -11px;
+}
+.sidebar-nav .panel-body ul.nav {
+    border-right: 1px solid #ddd;
+}
+#main::-webkit-scrollbar,
+.sidebar-nav .panel-body::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+}
+#main::-webkit-scrollbar{
+    width: 13px;
+}
+#main::-webkit-scrollbar-button,
+.sidebar-nav .panel-body::-webkit-scrollbar-button {
+    display: none;
+}
+#main::-webkit-scrollbar-track,
+.sidebar-nav .panel-body::-webkit-scrollbar-track {
+    background: #fff;
+}
+#main::-webkit-scrollbar-thumb,
+.sidebar-nav .panel-body::-webkit-scrollbar-thumb {
+    min-height: 2rem;
+    background: #d2d2d2;
+    background-clip: padding-box;
+    border: 3px solid #fff;
+    border-radius: 5px;
+}

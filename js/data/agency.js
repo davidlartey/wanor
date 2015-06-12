@@ -4,15 +4,15 @@
 
 define(['app'], function(Wanor) {
 
-	// Agencies module
-	Wanor.module("Data.Agency", function(Agency, Wanor, Backbone, Marionette, $, _) {
-		// Agency Model
-		Agency = Backbone.Model.extend({
+	// Data.Agency module
+	Wanor.module("Data", function(Data, Wanor, Backbone, Marionette, $, _) {
+        
+        // Agency Model
+		Data.Agency = Backbone.Model.extend({});
 
-		});
 	});
 	
 	// Return model object
-	return Wanor.Data.Agency;
+	return Wanor.Data;
 
 });
