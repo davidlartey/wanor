@@ -20,7 +20,8 @@ define([
 				// $.Deffered
 				var deferredResponse = $.Deferred();
 				// Initialise and fetch agency instance with id
-				var agency = new Agency({ id : id });
+				/*
+				var agency = new Data.Agency({ id : id });
 				agency.fetch({
 					success : function(data) {
 						deferredResponse.resolve(data);
@@ -29,6 +30,20 @@ define([
 						deferredResponse.resolve(undefined);
 					},
 				});
+				*/
+				// Dummy data
+				var agency = new Data.Agency(
+					{
+	                     "id" : 1,
+	                     "name": "ECG Distric Office, Ningo-Prampram Distric, Prampram.",
+	                     "institution": "ECG",
+	                     "phoneNumber": "555-0163",
+	                     "location" : {
+	                     	"lat" : "0.4567",
+	                        	"lon" : "0.2345",
+	                        }
+				});
+				deferredResponse.resolve(agency);
 				// Return promise
 				return deferredResponse.promise();
 			},

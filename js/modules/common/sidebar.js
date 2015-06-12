@@ -7,9 +7,12 @@ define([
 		'tpl!modules/common/templates/sidebar.html',
 	], function(Wanor, tplSidebar){
 
-		Wanor.module("Sidebar", function(Sidebar, Wanor, Backbone, Marionette, $, _) {
+		Wanor.module("Common.Sidebar", function(Sidebar, Wanor, Backbone, Marionette, $, _) {
 
-			// View.
+			/**
+			 * Views
+			 */
+			// Sidebar layout view.
 			Sidebar.View = Marionette.LayoutView.extend({
 				template : tplSidebar,
 				regions : {
@@ -17,10 +20,14 @@ define([
 					footer : '#sidebar-footer',
 				}
 			});
-
-			// Display
+			// Instantiate
+			// In the global scope of module function so other functions can use
 			var sidebarView = new Sidebar.View();
-			Wanor.appLayout.sidebar.show(sidebarView);
+
+			// Display on initialisation
+			Wanor.addInitializer(function() {
+				Wanor.appLayout.sidebar.show(sidebarView);
+			});
 
 			/**
 			 * Event Handlers

@@ -9,6 +9,7 @@ require.config({
 	paths : {
 		'jquery' : 'lib/jquery',
 		'json2' : 'lib/json2',
+		'bootstrap' : 'lib/bootstrap',
 		'underscore' : 'lib/underscore',
 		'backbone' : 'lib/backbone',
 		'marionette' : 'lib/backbone.marionette',
@@ -16,6 +17,9 @@ require.config({
 		'tpl' : 'lib/underscore-tpl',
 	},
 	shim : {
+		'bootstrap' : {
+			deps : ['jquery'],
+		},
 		'backbone' : {
 			deps : ['jquery', 'json2', 'underscore']
 		},
@@ -30,7 +34,7 @@ require.config({
 });
 
 
-require(['app'], function( Wanor ) {
+require(['app', 'bootstrap'], function( Wanor ) {
 	
 	// Start App
 	// var WanorApp = require('app'); // Get access to application from the global scope

@@ -17,7 +17,7 @@ define([
 			regions : {
 				header : "#header",
 				sidebar : "#sidebar",
-				sidebarList : "#sidebar-list",
+				main : '#main',
 			}
 		});
 		Wanor.appLayout = new RootLayout();
@@ -45,7 +45,8 @@ define([
 			// Run agencies module
 			require([
 					'modules/header/header',
-					'modules/common/sidebar.view',
+					'modules/common/sidebar',
+					'modules/common/main',
 					'modules/agencies/agencies',
 				], function() {
 

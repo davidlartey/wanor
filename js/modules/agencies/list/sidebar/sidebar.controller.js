@@ -4,21 +4,21 @@
 
 define(['app'], function(Wanor) {
 
-	Wanor.module("Agencies.List", function(List, Wanor, Backbone, Marionette, $, _) {
+	Wanor.module("Agencies.List.Sidebar", function(Sidebar, Wanor, Backbone, Marionette, $, _) {
 
-		List.Controller = {
+		Sidebar.Controller = {
 
 			// List agencies in sidebar
 			listAgencies : function() {
 				require([
 					'data/data',
-					'modules/agencies/list/list_view',
+					'modules/agencies/list/sidebar/sidebar.view',
 				], function() {
 					// Request agencies data
 					var fetchAgencies = Wanor.request("data:agencies");
 					$.when(fetchAgencies).done(function(agencies) {
 						// Sidebar List
-						var sidebarListView = new List.View.Sidebar({
+						var sidebarListView = new Sidebar.View({
 							collection : agencies,
 						});
 
@@ -34,6 +34,6 @@ define(['app'], function(Wanor) {
 	});
 
 	// Return
-	return Wanor.Agencies.List.Controller;
+	return Wanor.Agencies.List.Sidebar.Controller;
 
 });
