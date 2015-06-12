@@ -9,13 +9,13 @@ define(['app'], function(Wanor) {
 		// Router
 		Agencies.Router = Marionette.AppRouter.extend({
 			appRoutes : {
-				'' : 'listAgenciesSidebar',
 				'agencies' : 'listAgencies',
 				'agencies/:id' : 'showAgency',
-			}
+			},
+
 		});
 
-		// API
+		// API controller
 		var API = {
 
 			// Show Agencies List in sidebar
@@ -65,6 +65,11 @@ define(['app'], function(Wanor) {
 			new Agencies.Router({
 				controller : API,
 			});
+		});
+
+		// Agencies
+		Agencies.on("start", function() {
+			API.listAgenciesSidebar();
 		});
 
 	});

@@ -6,6 +6,8 @@ define([
     'app',
     'data/agency',
     'data/agencies',
+    'data/story',
+    'data/stories',
 ], function(Wanor) {
 
 	Wanor.module('Data', function(Data, Wanor, Backbone, Marionette, $, _) {
@@ -117,6 +119,80 @@ define([
 				return deferredResponse.promise();
 			},
 
+			// Fetch a story
+			getStory : function( id ){
+				// $.Deffered
+				var deferredResponse = $.Deferred();
+				// Initialise and fetch agency instance with id
+				/*
+				var agency = new Data.Agency({ id : id });
+				agency.fetch({
+					success : function(data) {
+						deferredResponse.resolve(data);
+					},
+					error : function() {
+						deferredResponse.resolve(undefined);
+					},
+				});
+				*/
+				// Dummy data
+				var dummyStory = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+				var story = new Data.Story({
+	            	"id" : 2,
+	                "user" : "Jane Doe",
+	                "story" : dummyStory,
+				});
+				deferredResponse.resolve(story);
+				// Return promise
+				return deferredResponse.promise();
+			},
+
+			// Fetch all stories
+			getStories : function() {
+				// $.Deffered
+				var deferredResponse = $.Deferred();
+				var stories = new Data.Stories();
+				/*
+				// fetch agencies
+				stories.fetch({
+					success : function(data) {
+						deferredResponse.resolve(data);
+					},
+					error : function() {
+						deferredResponse.resolve(undefined);
+					},
+				});
+				*/
+				// Dummy Data
+				var dummyStory = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+				var story1 = new Data.Story({
+	            	"id" : 1,
+	                "user" : "John Doe",
+	                "story" : dummyStory,
+				});
+				var story2 = new Data.Story({
+	            	"id" : 2,
+	                "user" : "Jane Doe",
+	                "story" : dummyStory,
+				});
+				var story3 = new Data.Story({
+	            	"id" : 3,
+	                "user" : "Jane Doe",
+	                "story" : dummyStory,
+				});
+				var story4 = new Data.Story({
+	            	"id" : 4,
+	                "user" : "John Doe",
+	                "story" : dummyStory,
+				});
+				stories.add([story1, story2, story3, story4]);
+				deferredResponse.resolve(stories);
+
+				// Return promise
+				return deferredResponse.promise();
+
+			},
+
 		};
 
 		/**
@@ -130,6 +206,14 @@ define([
 		Wanor.reqres.setHandler("data:agencies", function() {
 			return API.getAgencies();
 		});
+		// Get a story
+		Wanor.reqres.setHandler("data:story", function(id){
+			return API.getStory(id);
+		});
+		// Get stories
+		Wanor.reqres.setHandler("data:stories", function() {
+			return API.getStories(); 
+		})
 
 	});
 

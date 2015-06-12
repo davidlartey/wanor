@@ -48,6 +48,7 @@ define([
 					'modules/common/sidebar',
 					'modules/common/main',
 					'modules/agencies/agencies',
+					'modules/stories/stories',
 				], function() {
 
 					// Start backbone.history

@@ -8,9 +8,6 @@ define(['app'], function(Wanor, Agency) {
 
 		// Agencies Collection
 		Data.Agencies = Backbone.Collection.extend({
-			url :  function() {
-				return Wanor.APIBaseURL + "agencies.json";
-			},
 			model : Data.Agency,
 		});
 

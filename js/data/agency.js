@@ -8,11 +8,7 @@ define(['app'], function(Wanor) {
 	Wanor.module("Data", function(Data, Wanor, Backbone, Marionette, $, _) {
         
         // Agency Model
-		Data.Agency = Backbone.Model.extend({
-			urlRoot :  function() {
-				return Wanor.APIBaseURL + 'agencies.json';
-			},
-		});
+		Data.Agency = Backbone.Model.extend({});
 
 	});
 	
